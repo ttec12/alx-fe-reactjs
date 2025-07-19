@@ -4,8 +4,8 @@ import React from 'react';
 // Functional component for the Footer
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white p-4 text-center rounded-t-lg mt-8">
-      <p className="text-sm">&copy; 2023 City Lovers</p>
+    <footer style={{ backgroundColor: '#2D3748', color: '#FFFFFF', padding: '1rem', textAlign: 'center', borderRadius: '0.5rem 0.5rem 0 0', marginTop: '2rem' }}>
+      <p style={{ fontSize: '0.875rem' }}>&copy; 2023 City Lovers</p>
     </footer>
   );
 };
