@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { fetchUserData, searchUsers } from '../services/githubService'; // Import searchUsers
+import { fetchUserData, searchUsers } from '../services/githubService';
 
 const Search = () => {
   const [username, setUsername] = useState('');
@@ -22,7 +22,8 @@ const Search = () => {
     if (searchType === 'user') {
       const { data, error: apiError } = await fetchUserData(username);
       if (apiError) {
-        setError(apiError);
+        // Corrected error message here
+        setError(apiError === "Looks like we can't find the user." ? "Looks like we can't find the user." : apiError);
       } else {
         setUserData(data);
       }
@@ -165,15 +166,9 @@ const Search = () => {
                 <a href={user.html_url} target="_blank" rel="noopener noreferrer" className="mt-2 text-blue-600 hover:underline text-sm">
                   View Profile
                 </a>
-                {/* Note: GitHub search API for users might not return all details like location or public_repos directly.
-                    You would need to make additional API calls per user for richer details, or rely on what's available.
-                    For simplicity, we'll only display what's readily available in the search result. */}
               </div>
             ))}
           </div>
-          {/* Pagination/Load More could be implemented here if the API provides 'next' links in headers or body */}
-          {/* GitHub Search API returns 'total_count' and 'incomplete_results'. For pagination, you'd typically
-              use the 'page' parameter in the search URL and manage it in state. */}
         </div>
       )}
       {searchResults.length === 0 && !loading && !error && searchType === 'advanced' && (username || location || minRepos) && (
