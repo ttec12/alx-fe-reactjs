@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+const GITHUB_API_BASE_URL = 'https://api.github.com';
 const GITHUB_API_URL = import.meta.env.VITE_APP_GITHUB_API_URL;
 const GITHUB_API_KEY = import.meta.env.VITE_APP_GITHUB_API_KEY;
 
@@ -43,4 +43,5 @@ export const searchUsers = async (query, location = '', minRepos = '') => {
     }
     return { data: null, error: "An error occurred during advanced search." };
   }
+
 };
