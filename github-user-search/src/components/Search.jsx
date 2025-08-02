@@ -22,8 +22,8 @@ const Search = () => {
     if (searchType === 'user') {
       const { data, error: apiError } = await fetchUserData(username);
       if (apiError) {
-        // Corrected error message here
-        setError(apiError === "Looks like we can't find the user" ? "Looks like we can't find the user" : apiError);
+        // Corrected: Directly set the error message received from the service
+        setError(apiError);
       } else {
         setUserData(data);
       }
@@ -179,4 +179,3 @@ const Search = () => {
 };
 
 export default Search;
-
