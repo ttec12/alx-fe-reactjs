@@ -23,7 +23,7 @@ const Search = () => {
       const { data, error: apiError } = await fetchUserData(username);
       if (apiError) {
         // Corrected error message here
-        setError(apiError === "Looks like we can't find the user." ? "Looks like we can't find the user." : apiError);
+        setError(apiError === "Looks like we can't find the user" ? "Looks like we can't find the user" : apiError);
       } else {
         setUserData(data);
       }
@@ -179,3 +179,4 @@ const Search = () => {
 };
 
 export default Search;
+
