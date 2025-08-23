@@ -21,7 +21,9 @@ export default function RegistrationForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!username)|| (!email) || (!password) {
+    if (!username)|| 
+    if (!email) || 
+    if (!password) {
       setError("All fields are required!");
       return;
     }
@@ -83,5 +85,6 @@ export default function RegistrationForm() {
     </form>
   );
 }
+
 
 
