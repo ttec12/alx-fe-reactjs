@@ -54,7 +54,7 @@ export default function RegistrationForm() {
         type="text"
         name="username"
         placeholder="Username"
-        value={formData.username}   // ✅ uses formData, not plain username
+        value={username}   // ✅ uses formData, not plain username
         onChange={handleChange}
         className="border p-2 w-full rounded"
       />
@@ -63,7 +63,7 @@ export default function RegistrationForm() {
         type="email"
         name="email"
         placeholder="Email"
-        value={formData.email}   // ✅ uses formData, not plain email
+        value={email}   // ✅ uses formData, not plain email
         onChange={handleChange}
         className="border p-2 w-full rounded"
       />
@@ -72,7 +72,7 @@ export default function RegistrationForm() {
         type="password"
         name="password"
         placeholder="Password"
-        value={formData.password}   // ✅ uses formData, not plain password
+        value={password}   // ✅ uses formData, not plain password
         onChange={handleChange}
         className="border p-2 w-full rounded"
       />
@@ -83,3 +83,4 @@ export default function RegistrationForm() {
     </form>
   );
 }
+
