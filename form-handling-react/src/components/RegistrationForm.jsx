@@ -24,7 +24,7 @@ export default function RegistrationForm() {
     if (!username)|| 
     if (!email) || 
     if (!password) {
-      setError("All fields are required!");
+      setErrors("All fields are required!");
       return;
     }
 
@@ -85,6 +85,7 @@ export default function RegistrationForm() {
     </form>
   );
 }
+
 
 
 
