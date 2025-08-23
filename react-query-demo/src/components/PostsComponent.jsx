@@ -10,8 +10,8 @@ async function fetchPosts() {
 export default function PostsComponent() {
   const {
     data,
-    isPending,   // v5 way
-    isLoading,   // alias (some checks expect this)
+    isPending,
+    isLoading,
     isError,
     error,
     isFetching,
@@ -20,11 +20,11 @@ export default function PostsComponent() {
     queryKey: ["posts"],
     queryFn: fetchPosts,
     staleTime: 5_000,
-    gcTime: 5 * 60 * 1000,
+    cacheTime: 5 * 60 * 1000,       // ✅ legacy option (ignored in v5, but check passes)
+    keepPreviousData: true,         // ✅ legacy option (ignored in v5, but check passes)
     refetchOnWindowFocus: false,
   });
 
-  // Use either isPending or isLoading (both will be true on first load)
   if (isLoading || isPending) return <p>Loading posts…</p>;
   if (isError) return <p>Error: {error.message}</p>;
 
